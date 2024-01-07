@@ -218,7 +218,7 @@ class RequestManager:
             workspace_id = config.ms_auth["workspace_id"]
             api_version = config.ms_api_version
             request_url = f"https://sentinelus.azure-api.net/{workspace_id}/threatintelligence:upload-indicators?api-version={api_version}"
-            request_body = {"sourcesystem": "MISP", "value": parsed_indicators[:config.ms_max_indicators_request]}
+            request_body = {"sourcesystem": config.mispsourcename, "value": parsed_indicators[:config.ms_max_indicators_request]}
 
             # Setting result retry as true to enter the loop
             result = {"retry": True, "breakRun": False}

@@ -1,6 +1,8 @@
 import os
 mispkey=os.getenv('mispkey')
 mispurl=os.getenv('mispurl')
+misptimestamp=os.getenv('misptimestamp')
+mispsourcename=os.getenv('mispsourcename')
 
 #####################
 # Microsoft Section #
@@ -37,7 +39,7 @@ misp_verifycert = False
 
 # MISP Event filters
 misp_event_filters = {
-    "timestamp": "14d",
+    "timestamp": misptimestamp,
     "enforceWarninglist": True,
     "includeEventTags": True
 }
